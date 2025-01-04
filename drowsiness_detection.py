@@ -50,7 +50,7 @@ class FaceMeshDetector:
             return image, None
 
         landmarks = [(int(lm.x * w), int(lm.y * h)) 
-                     for lm in results.multi_face_landmarks[0].landmark]
+                    for lm in results.multi_face_landmarks[0].landmark]
 
         left_ear = self.calculate_ear(Config.LEFT_EYE_INDICES, landmarks)
         right_ear = self.calculate_ear(Config.RIGHT_EYE_INDICES, landmarks)
@@ -162,7 +162,7 @@ class DrowsinessDetectionPage:
         )
         processed_image, _ = self.face_detector.process_frame(image)
         st.image(processed_image, channels="BGR", caption="Processed Image", 
-                 use_column_width=True)
+                use_column_width=True)
 
     def render(self):
         # Streamlit Sidebar Menu
