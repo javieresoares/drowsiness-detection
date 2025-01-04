@@ -84,9 +84,10 @@ class FaceMeshDetector:
                         cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
         return image, avg_ear
 
+from playsound import playsound
+
 class AlarmSystem:
     def __init__(self):
-        pygame.mixer.init()
         self.is_playing = False
         self.start_time = None
 
@@ -94,10 +95,9 @@ class AlarmSystem:
         if not os.path.exists(Config.AUDIO_FILE):
             st.error("Sound file not found!")
             return
-
+        
         try:
-            pygame.mixer.music.load(Config.AUDIO_FILE)
-            pygame.mixer.music.play()
+            playsound(Config.AUDIO_FILE)
             self.is_playing = True
             self.start_time = time.time()
         except Exception as e:
@@ -105,7 +105,6 @@ class AlarmSystem:
 
     def update(self):
         if self.is_playing and time.time() - self.start_time > Config.ALARM_DURATION:
-            pygame.mixer.music.stop()
             self.is_playing = False
             self.start_time = None
 
