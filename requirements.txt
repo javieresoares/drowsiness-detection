@@ -3,17 +3,20 @@
 deepface==0.0.93
 # matplotlib==3.10.0
 matplotlib==3.9.4
-matplotlib-Chinese==0.0.4
+# matplotlib-Chinese==0.0.4
+# mediapipe
 mediapipe
 mtcnn==1.0.0
-numpy
-opencv-python-headless
+# numpy
+numpy==1.23.5
+# opencv-python-headless
+opencv-python-headless==4.8.0.74
 pandas==2.2.3
 Pillow==10.3.0
 pygame==2.6.1
 pyOpenGL
 scikit-learn==1.6.0
 streamlit==1.41.1
-tensorflow==2.18.0
+# tensorflow==2.18.0
+tensorflow==2.12.0
 tqdm==4.67.1
-streamlit-option-menu
